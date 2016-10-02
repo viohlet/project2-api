@@ -30,5 +30,5 @@ curl --include --request PATCH http://localhost:3000/projects/4 \
   }'
 
   #destroy
-curl --include --request DELETE http://localhost:3000/projects/4 \
+curl --include --request DELETE http://localhost:3000/projects/6 \
   --header "Content-Type: application/json"

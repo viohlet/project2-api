@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
   # resources :user_stories, except: [:new, :edit]
-  resources :user_stories, only: [:index, :show, :create, :update]
+  resources :user_stories, only: [:index, :show, :create, :update, :destroy]
   resources :projects, only: [:index, :show, :create, :update, :destroy]
 end
