@@ -28,17 +28,17 @@
 #                  { title: 'Capstone' }
 #                ])
 #
-# User_story.create([
-#                     { role: 'user',
-#                       action: 'play',
-#                       goal: 'The point of Tic-tac-toe',
-#                       project_id: '1' },
-#                     { role: 'user',
-#                       action: 'sign-in',
-#                       goal: 'I want to access the site',
-#                       project_id: '2' },
-#                     { role: 'user',
-#                       action: 'be impressed',
-#                       goal: 'it is your last huge project',
-#                       project_id: '3' }
-#                   ])
+UserStory.create([
+                    { role: 'user',
+                      action: 'play',
+                      goal: 'The point of Tic-tac-toe',
+                      project_id: '1' },
+                    { role: 'user',
+                      action: 'sign-in',
+                      goal: 'I want to access the site',
+                      project_id: '2' },
+                    { role: 'user',
+                      action: 'be impressed',
+                      goal: 'it is your last huge project',
+                      project_id: '3' }
+                 ])
