@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
 
   resources :user_stories, except: [:new, :edit]
-  resources :projects, only: [:index, :show]
+  resources :projects, only: [:index, :show, :create, :update, :destroy]
 end

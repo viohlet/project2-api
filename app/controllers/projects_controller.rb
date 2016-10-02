@@ -30,8 +30,8 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    @project = Project.find(params[:id])
-
+    # @project = Project.find(params[:id])
+    # render json: @project
     if @project.update(project_params)
       head :no_content
     else
@@ -42,9 +42,11 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project.destroy
-
-    head :no_content
+    if @project.destroy
+      head :no_content
+    else
+      render json:  @project.errors, status: :unprocessable_entity
+    end
   end
 
   private
