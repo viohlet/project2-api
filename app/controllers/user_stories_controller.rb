@@ -30,8 +30,7 @@ class UserStoriesController < ApplicationController
   # PATCH/PUT /user_stories/1
   # PATCH/PUT /user_stories/1.json
   def update
-    @user_story = UserStory.find(params[:id])
-
+    # @user_story = UserStory.find(params[:id])
     if @user_story.update(user_story_params)
       head :no_content
     else

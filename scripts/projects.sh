@@ -11,6 +11,14 @@ curl --include --request POST http://localhost:3000/projects \
     }
   }'
 
+curl --include --request POST http://localhost:3000/projects \
+  --header "Content-Type: application/json" \
+  --data '{
+    "project": {
+      "title": "Best project ever"
+    }
+  }'
+
 #update
 curl --include --request PATCH http://localhost:3000/projects/4 \
   --header "Content-Type: application/json" \
