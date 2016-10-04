@@ -19,6 +19,7 @@ class UserStoriesController < ProtectedController
   # POST /user_stories.json
   def create
     @user_story = current_user.userstories.build(user_story_params)
+    @user_story = UserStory.new(user_story_params)
 
     if @user_story.save
       render json: @user_story, status: :created, location: @user_story
