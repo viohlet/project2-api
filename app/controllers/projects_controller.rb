@@ -1,10 +1,10 @@
-class ProjectsController < ApplicationController
+class ProjectsController < ProtectedController
   before_action :set_project, only: [:show, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.where("user_id=#{current_user.id}").reverse
 
     render json: @projects
   end
@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
 
     if @project.save
       render json: @project, status: :created, location: @project
@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   private
 
   def set_project
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
   end
 
   def project_params

@@ -1,4 +1,4 @@
-class UserStoriesController < ApplicationController
+class UserStoriesController < ProtectedController
   before_action :set_user_story, only: [:show, :update, :destroy]
 
   # GET /user_stories
@@ -18,7 +18,7 @@ class UserStoriesController < ApplicationController
   # POST /user_stories
   # POST /user_stories.json
   def create
-    @user_story = UserStory.new(user_story_params)
+    @user_story = current_user.userstories.build(user_story_params)
 
     if @user_story.save
       render json: @user_story, status: :created, location: @user_story
@@ -48,11 +48,11 @@ class UserStoriesController < ApplicationController
 
   private
 
-    def set_user_story
-      @user_story = UserStory.find(params[:id])
-    end
+  def set_user_story
+    @user_story = current_user.userstories.find(params[:id])
+  end
 
-    def user_story_params
-      params.require(:user_story).permit(:role, :string, :action, :goal, :project_id)
-    end
+  def user_story_params
+    params.require(:user_story).permit(:role, :action, :goal, :project_id)
+  end
 end
