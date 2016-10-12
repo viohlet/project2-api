@@ -1,6 +1,6 @@
 #index
 curl --include --request GET http://localhost:3000/projects \
-  --header "Authorization: Token token=BAhJIiU3NDUzZDYyODNkNTg3MDRiNDM0OGZmMGJmMTZmNDRlMgY6BkVG--a463cc771ae138874ba2dfbc1bcc4a2d6e883994"
+  --header "Authorization: Token token=BAhJIiVmNDA3MWVlNzhkYzM5NzI0NTU5NWYzYzBlNDhkZmZmNQY6BkVG--b1bd1c082343b740cfae129edee15370b805d2e3"
 
 curl --include --request GET http://localhost:3000/projects \
   --header "Authorization: Token token=BAhJIiU2NmFlYWQ5ZTVhNGVhNWE4OGUzZDYwYzE3YTAzZWVjNwY6BkVG--a57d67331fabfb6c350edd8f580aa8fe855a9c04"
